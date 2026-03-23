@@ -1,0 +1,43 @@
+#about-page {
+    background-size:cover;
+    background-position:center;
+
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction:column;
+    align-items:center;
+}
+
+.about-card {
+    background: var(--general-background);
+    border-radius:2%;
+    width:85%;
+    margin-left:auto;
+    margin-right:auto;
+
+    padding:20px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+
+    font-size:150%;
+}
+
+#ask input {
+    font-size:125%;
+    background:none;
+    border:none;
+    width:80%;
+}
+#ask label {
+    vertical-align:top;
+}
+
+#ask textarea {
+    width:100%;
+}
+
+@media (min-width: 768px) {
+    .gallery-images{
+        flex-direction:row;
+    }
+}

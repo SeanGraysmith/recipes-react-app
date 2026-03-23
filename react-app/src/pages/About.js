@@ -1,0 +1,54 @@
+import styles from "./About.css";
+import Question from "./components/Question"
+const About = (props) => {
+    return (
+        <main id="about-page" style={{ backgroundImage:"url('images/about-background.png')" }}>
+            <div id="about-site" className="about-card">
+                <h2>About this Website and Myself</h2>
+
+                <p>I am building this website to create a place to store my favorite recipes for the public to see. I am focusing on recipes that are affordable, fun, and quick to make. Additionally, I want to promote beginners to learn more about cooking, as it is an essential skill for everyone. </p>
+                <p>I am a university student who enjoys cooking as much as I enjoy hanging out with friends and family. I hope that my recipes can reach a broad audience and convince others to learn how to spread love through food. </p>
+            </div>
+
+            <div id="faq" className="about-card">
+                <h2>Frequently Asked Questions</h2>
+                
+                <Question questionQ="Q: Where do you find recipes?" questionA="Many of the recipes here are my own, and others I have found online, made myself, 
+                                                                        and added adjustments over time. All outside sources are accredited appropriately." />
+                
+                <Question questionQ="Q: What's a good starter recipe?" questionA="There are lots of good starters, but my suggestion is to start with the very 
+                                                        basics like pasta and simple proteins. My personal favorite is experimenting with different forms of cooking eggs." />
+
+                <Question questionQ="Q: What tools do I need to start cooking?" questionA="You only need a simple pot and frying pan to make the majority of recipes on this website.
+                                         Any sharp knife will do for beginners, just be careful and take your time. I would also recommend using a bamboo cutting board and a wooden cooking spoon." />
+            </div>
+
+            <div id="ask" className="about-card">
+                <h2>Ask a question</h2>
+                <form id="ask-form" method="POST">
+                    <input type="hidden" name="access_key" value="3925c134-3dc6-4ff2-9d39-6ac0475d907a"/>
+                    <p>
+                        <label for="name">Name:</label>
+                        <input placeholder="type your name here" type="text" name="name" id="name" required/>
+                    </p>
+
+                    <p>
+                        <label for="email">Email:</label>
+                        <input placeholder="type your email here" type="email" name="email" id="email" required/>
+                    </p>
+                
+                    <p>
+                        <label for="message">Message:</label>
+                        <textarea name="message" id="message" required></textarea>
+                    </p>
+
+
+                    <p><button className="action-button" type="submit">Submit</button></p>
+                </form>
+                <h3 id="form-result"></h3>
+            </div>
+        </main>
+    );
+};
+
+export default About;

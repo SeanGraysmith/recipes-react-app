@@ -1,0 +1,28 @@
+/* attribute cards */
+#attribute-cards {
+  max-width: 80%;
+  padding:14px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:space-between;
+  margin:auto;
+}
+
+.attribute-card {
+    display:flex;
+    flex-wrap:wrap;
+    font-size:125%;
+    align-items:center;
+}
+
+.attribute-card h3 {
+    max-width:150px;
+    padding-left:10px;
+    color: var(--attribute-text);
+}
+
+.attribute-card img {
+    width: 75px;
+    height: 75px;
+}

@@ -1,0 +1,167 @@
+
+#top-intro {
+    border-bottom: 2px solid var(--dark-gray);
+    padding:26px 16px;
+    min-height:220px;
+    color:#fff;
+    position:relative;
+    background-size:cover;
+    background-position:center;
+}
+
+#top-intro h1 {
+    margin: 0 0 10px;
+    font-size: 36px;
+}
+
+#top-intro h3 {
+    margin: 0 0 14px; 
+    font-size: 25px; 
+    font-weight:400;
+    max-width:50%;
+}
+
+/* popular recipes */
+#popular-recipe-content {
+    display:flex;
+    flex-direction:column;
+    border-bottom: 2px solid var(--dark-gray);
+    padding-top: 20px;
+}
+
+#popular-heading {
+    margin:auto;
+    padding:0px;
+    align-self:center;
+}
+
+#popular-cards {
+    padding-top:10px;
+    padding-bottom:18px;
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+    align-items:center;
+}
+
+/* why you'll love these.. */
+#why-love {
+    position:relative;
+    padding: 10px;
+    background-size:cover;
+    background-position:center;
+    text-align:left;
+}
+
+#why-love h1 {
+    margin: auto;
+    font-size: 36px;
+    margin-bottom:30px;
+    max-width:90%;
+}
+
+#why-love ul {
+    list-style-type:disc;
+    padding-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:20px;
+    max-width:90%;
+    margin:auto;
+    text-align:left;
+}
+
+#why-love li {
+    margin:6px 0;
+    padding: 10px;
+}
+
+#why-content {
+    background: var(--general-background);
+    max-width:95%;
+    margin:auto;
+    padding: 10px 20px;
+    border-radius:3%;
+}
+
+/* about me and browse gallery */
+#about-browse {
+    position:relative;
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    flex-wrap:wrap;
+    text-align:center;
+    align-items:center;
+    padding-top: 20px;
+    padding-bottom:20px;
+}
+
+#about-me {
+    margin:auto;
+    margin-bottom:20px;
+    background:var(--general-background);
+    border-radius:15px;
+    padding: 10px 8px;
+    max-width: 600px;
+}
+
+#about-me p {
+    font-size: 200%;
+}
+
+#browse {
+    margin:auto;
+    background:var(--general-background);
+    max-width:400px;
+    min-height:100px;
+    border-radius:20%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    padding: 20px;
+}
+
+#browse img {
+    margin: 10px;
+    border-radius:10%;
+}
+
+.action-button {
+    background: var(--button-yellow);
+    border:none;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-weight:1000;
+    cursor:pointer;
+    box-shadow:0 1px 0 rgba(0,0,0,.25);
+}
+
+.inactive-button {
+    background: var(--general-background);
+}
+
+
+@media (min-width: 768px) {
+    #top-intro h3 {
+        max-width:20%;
+    }
+
+    #popular-cards{
+        flex-direction:row;
+        align-content:flex-start;
+    }
+
+    #why-love ul {
+        max-width:60%;
+    }
+
+    #why-content {
+        max-width:50%;
+    }
+
+    #about-me {
+        margin:auto;
+    }
+
+}
