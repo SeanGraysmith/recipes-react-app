@@ -8,19 +8,19 @@ const Home = (props) => {
                 <div id="top-intro" className="tint-background" style={{ backgroundImage: "url('/images/hero-pic.png')"}}>
                     <h1>Cheap, High-Quality Recipes for Busy College Students</h1>
                     <h3>Easy, budget friendly meals that anyone can cook</h3>
-                    <Link to="recipes.html"> <button className="action-button">Browse Recipes</button></Link>
+                    <Link to="/recipes"> <button className="action-button">Browse Recipes</button></Link>
                 </div>
                 <div id="popular-recipe-content">
                     <h1 id="popular-heading">Popular Recipes</h1>
                     <div id="popular-cards">
 
-                        <RecipeCard imageLink="images/breakfast-burrito.png" altText="breakfast burrito" 
+                        <RecipeCard imageLink="/images/breakfast-burrito.png" altText="breakfast burrito" 
                         recipeName="Breakfast Burritos" recipeTime="15 min" recipeCost="$1.50/Serving"/>
 
-                        <RecipeCard imageLink="images/cheese-chicken.png" altText="Cheesy chicken broccoli and rice" 
+                        <RecipeCard imageLink="/images/cheese-chicken.png" altText="Cheesy chicken broccoli and rice" 
                         recipeName="Cheesy Chicken, Broccoli & Rice" recipeTime="30 min" recipeCost="$2.75/Serving"/>
                         
-                        <RecipeCard imageLink="images/buffalo_chicken.png" altText="buffalo chicken wrap" 
+                        <RecipeCard imageLink="/images/buffalo_chicken.png" altText="buffalo chicken wrap" 
                         recipeName="Buffalo Chicken Wraps" recipeTime="15 min" recipeCost="$2.00/Serving"/>
 
                     </div>
@@ -38,13 +38,13 @@ const Home = (props) => {
                 
 
                 <div id="attribute-cards">
-                    <AttributeCard imageLink="images/beginner-friendly.png" altText="Beginner Friendly" displayText="Beginner-Friendly"/>
+                    <AttributeCard imageLink="/images/beginner-friendly.png" altText="Beginner Friendly" displayText="Beginner-Friendly"/>
 
-                    <AttributeCard imageLink="images/budget-recipes.png" altText="Budget Recipes" displayText="Budget Recipes"/>
+                    <AttributeCard imageLink="/images/budget-recipes.png" altText="Budget Recipes" displayText="Budget Recipes"/>
         
-                    <AttributeCard imageLink="images/time.png" altText="30 Mins or Less" displayText="30 minutes or less"/>
+                    <AttributeCard imageLink="/images/time.png" altText="30 Mins or Less" displayText="30 minutes or less"/>
 
-                    <AttributeCard imageLink="images/tested.png" altText="Time-Tested" displayText="Experience-tested"/>
+                    <AttributeCard imageLink="/images/tested.png" altText="Time-Tested" displayText="Experience-tested"/>
                 </div>
                 
                 <div id="about-browse" className="tint-background" style={{ backgroundImage: "url('/images/about-browse-background.png')"}}>
@@ -55,8 +55,8 @@ const Home = (props) => {
 
                     <div id="browse">
                         <h1>Browse My Recipe Gallery</h1>
-                        <img src="images/pasta-gallery.png" alt="pasta"/>
-                        <Link to="gallery.html"><button className="action-button">See Completed Dishes</button></Link>
+                        <img src="/images/pasta-gallery.png" alt="pasta"/>
+                        <Link to="/gallery"><button className="action-button">See Completed Dishes</button></Link>
                     </div>
                 </div>
             </main>
