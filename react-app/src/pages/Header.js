@@ -1,11 +1,12 @@
 import styles from "./Header.css";
 import { Link } from "react-router-dom";
+import logo from "../images/logo.png";
 
 const Header = (props) => {
     return (
         <header>
                 <nav id="topnav">
-                    <img src="images/logo.png" alt="Sean's Recipes Logo"/>
+                    <img src={logo} alt="Sean's Recipes Logo"/>
 
                     <div id="hamburger-toggle">
                         <section></section>

@@ -1,8 +1,10 @@
 import styles from "./About.css";
 import Question from "./components/Question"
+import aboutBackground from "../images/about-background.png";
+
 const About = (props) => {
     return (
-        <main id="about-page" style={{ backgroundImage:"url('images/about-background.png')" }}>
+        <main id="about-page" style={{ backgroundImage:`url(${aboutBackground})` }}>
             <div id="about-site" className="about-card">
                 <h2>About this Website and Myself</h2>
 

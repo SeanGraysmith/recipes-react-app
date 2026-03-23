@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
 import styles from "./Recipes.css";
 import RecipeListCard from "./components/RecipeListCard"
+
+import tomatoPastaImage from "../images/recipes/tomato-pasta.png";
+import tacosImage from "../images/recipes/tacos.png";
+import bunImage from "../images/recipes/Bun_bo.png";
+import banhImage from "../images/recipes/banh-mi.png";
+import stuffedPepperImage from "../images/recipes/stuffed-bell-pepper.png";
+import ravioliImage from "../images/recipes/ravioli.png";
+
 const Recipes = (props) => {
     return (
         <main id="recipes-page">
@@ -15,26 +23,26 @@ const Recipes = (props) => {
 
             <div id="recipes-list">
                 <div className="column">
-                    <RecipeListCard imageLink="images/recipes/tomato-pasta.png" altText="Tomato Sauce Pasta" recipeName="Tomato Sauce Pasta" 
+                    <RecipeListCard imageLink={tomatoPastaImage} altText="Tomato Sauce Pasta" recipeName="Tomato Sauce Pasta" 
                     recipeCost="$1.5/Serving" recipeTime="20 minutes" />
 
-                    <RecipeListCard imageLink="images/recipes/tacos.png" altText="Tacos" recipeName="Tacos" 
+                    <RecipeListCard imageLink={tacosImage} altText="Tacos" recipeName="Tacos" 
                     recipeCost="$1.5/Serving" recipeTime="25 minutes" />
                 </div>
 
                 <div className="column">
-                    <RecipeListCard imageLink="images/recipes/Bun_bo.png" altText="Bún bò Huế" recipeName="Bún bò Huế" 
+                    <RecipeListCard imageLink={bunImage} altText="Bún bò Huế" recipeName="Bún bò Huế" 
                     recipeCost="$3/Serving" recipeTime="60 minutes" />
 
-                    <RecipeListCard imageLink="images/recipes/banh-mi.png" altText="Bánh mì" recipeName="Bánh mì" 
+                    <RecipeListCard imageLink={banhImage} altText="Bánh mì" recipeName="Bánh mì" 
                     recipeCost="$2/Serving" recipeTime="15 minutes" />
                 </div>
 
                 <div className="column">
-                    <RecipeListCard imageLink="images/recipes/stuffed-bell-pepper.png" altText="Stuffed Bell Peppers" recipeName="Stuffed Bell Peppers" 
+                    <RecipeListCard imageLink={stuffedPepperImage} altText="Stuffed Bell Peppers" recipeName="Stuffed Bell Peppers" 
                     recipeCost="$2.25/Serving" recipeTime="35 minutes" />
 
-                    <RecipeListCard imageLink="images/recipes/ravioli.png" altText="Ravioli" recipeName="Ravioli" 
+                    <RecipeListCard imageLink={ravioliImage} altText="Ravioli" recipeName="Ravioli" 
                     recipeCost="$2/Serving" recipeTime="30 minutes" />
                 </div>
             </div>
