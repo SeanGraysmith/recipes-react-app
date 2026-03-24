@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "./Home.css";
+import styles from "./css/Home.css";
 import AttributeCard from "./components/AttributeCard";
 import RecipeCard from "./components/RecipeCard";
 

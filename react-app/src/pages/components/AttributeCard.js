@@ -1,4 +1,4 @@
-import styles from "./AttributeCard.css";
+import styles from "./css/AttributeCard.css";
 const AttributeCard = (properties) => {
     return (
         <section className="attribute-card">

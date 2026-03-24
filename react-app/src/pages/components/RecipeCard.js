@@ -1,4 +1,4 @@
-import styles from "./RecipeCard.css";
+import styles from "./css/RecipeCard.css";
 
 const RecipeCard = (properties) => {
     return (

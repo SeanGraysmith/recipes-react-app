@@ -1,4 +1,4 @@
-import styles from "./GallerySection.css";
+import styles from "./css/GallerySection.css";
 const GallerySection = (properties) => {
     return (
         <section className="gallery-section">

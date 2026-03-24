@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "./Recipes.css";
+import styles from "./css/Recipes.css";
 import RecipeListCard from "./components/RecipeListCard"
 
 import tomatoPastaImage from "../images/recipes/tomato-pasta.png";

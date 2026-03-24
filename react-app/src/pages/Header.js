@@ -1,14 +1,21 @@
-import styles from "./Header.css";
+import styles from "./css/Header.css";
 import { Link } from "react-router-dom";
+import {useState} from "react";
 import logo from "../images/logo.png";
 
 const Header = (props) => {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
+
     return (
         <header>
                 <nav id="topnav">
                     <img src={logo} alt="Sean's Recipes Logo"/>
 
-                    <div id="hamburger-toggle">
+                    <div id="hamburger-toggle" onClick={toggleMenu}>
                         <section></section>
                         <section></section>
                         <section></section>

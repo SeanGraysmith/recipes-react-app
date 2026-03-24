@@ -1,4 +1,4 @@
-import styles from "./RecipeListCard.css";
+import styles from "./css/RecipeListCard.css";
 const RecipeListCard = (properties) => {
     return (
         <section className="recipe-list-card">

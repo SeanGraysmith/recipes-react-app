@@ -1,4 +1,4 @@
-import styles from "./Question.css";
+import styles from "./css/Question.css";
 const Question = (properties) => {
     return (
         <div className="question">

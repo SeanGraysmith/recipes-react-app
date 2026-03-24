@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "./Gallery.css";
+import styles from "./css/Gallery.css";
 import GallerySection from "./components/GallerySection";
 
 

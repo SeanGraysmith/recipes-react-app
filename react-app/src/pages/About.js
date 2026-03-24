@@ -1,4 +1,4 @@
-import styles from "./About.css";
+import styles from "./css/About.css";
 import Question from "./components/Question"
 import aboutBackground from "../images/about-background.png";
 

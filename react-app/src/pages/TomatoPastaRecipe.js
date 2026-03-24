@@ -1,4 +1,4 @@
-import styles from "./TomatoPastaRecipe.css";
+import styles from "./css/TomatoPastaRecipe.css";
 const TomatoPastaRecipe = (props) => {
     return (
         <main className="recipe-page">
