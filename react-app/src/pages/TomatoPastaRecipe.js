@@ -1,11 +1,12 @@
 import styles from "./css/TomatoPastaRecipe.css";
+import pastaImage from "../images/gallery/tomato-pasta.png";
 const TomatoPastaRecipe = (props) => {
     return (
         <main className="recipe-page">
             <h1>Tomato Sauce Pasta</h1>
             <div className="recipe-intro">
                 <div className="recipe-picture">
-                    <img src="images/gallery/tomato-pasta.png" alt="tomato sauce pasta"/>
+                    <img src={pastaImage} alt="tomato sauce pasta"/>
                     <div className="recipe-attributes">
                         <p>20 minutes</p>
                         <p>$1.50/Serving</p>

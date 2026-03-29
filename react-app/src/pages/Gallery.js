@@ -29,29 +29,17 @@ const Gallery = (props) => {
     return (
         <main id="gallery-page" style={{ backgroundImage: `url(${galleryBackground})`}}>
             <div id="gallery">                                              
-                <GallerySection imageOneLink= {tacoImage} imageOneAlt="tacos"
-                                imageTwoLink={garlicPastaImage} imageTwoAlt="pasta"
-                                imageThreeLink={slidersImage} imageThreeAlt="sliders"
-                                imageFourLink={buffaloChickenImage} imageFourAlt="buffalo chicken" />
+                <GallerySection imageSrcs= {[ tacoImage, garlicPastaImage, slidersImage, buffaloChickenImage]} />
                 {/*By Larry Miller - Flickr: Tinos Tacos, Roseburg, Ore., CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=32052457 */}
                 
-                <GallerySection imageOneLink={ravioliImage} imageOneAlt="ravioli"
-                                imageTwoLink={stuffedPepperImage} imageTwoAlt="stuffed bell peppers"
-                                imageThreeLink={chickenFajitasImage} imageThreeAlt="chicken fajitas"
-                                imageFourLink={breakfastBurritoImage} imageFourAlt="breakfast burrito" />
+                <GallerySection imageSrcs={[ravioliImage, stuffedPepperImage, chickenFajitasImage, breakfastBurritoImage]} />
                 { /* cyclonebill, CC BY-SA 2.0 <https://creativecommons.org/licenses/by-sa/2.0>, via Wikimedia Commons */}
 
-                <GallerySection imageOneLink={bunImage} imageOneAlt="bun bo"
-                                imageTwoLink={pizzaImage} imageTwoAlt="hawaiian pizza"
-                                imageThreeLink={tomatoPastaImage} imageThreeAlt="pasta"
-                                imageFourLink={seafoodPastaImage} imageFourAlt="seafood pasta" />
+                <GallerySection imageSrcs={[bunImage, pizzaImage, tomatoPastaImage, seafoodPastaImage ]} />
                 {/* By Alpha from Melbourne, Australia - Bún Bò Huê - Dakao Hoang AUD8.50, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=35224100 */}
                 {/*By Janine from Mililani, Hawaii, United States - do you like...pineapple?Uploaded by Fæ, CC BY 2.0, https://commons.wikimedia.org/w/index.php?curid=23234231 */}
                 
-                <GallerySection imageOneLink={banhImage} imageOneAlt="banh mi"
-                                imageTwoLink={shepherdsPieImage} imageTwoAlt="shepherds pie"
-                                imageThreeLink={steakImage} imageThreeAlt="steak"
-                                imageFourLink={bakedPastaImage} imageFourAlt="baked pasta" />
+                <GallerySection imageSrcs={[banhImage, shepherdsPieImage, steakImage, bakedPastaImage]} />
                 { /*By Nsaum75 at English Wikipedia, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=10402415*/}
                 {/*By Oxfordian Kissuth, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons*/}
             </div>

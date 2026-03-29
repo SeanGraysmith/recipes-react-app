@@ -22,20 +22,6 @@
     font-size:150%;
 }
 
-#ask input {
-    font-size:125%;
-    background:none;
-    border:none;
-    width:80%;
-}
-#ask label {
-    vertical-align:top;
-}
-
-#ask textarea {
-    width:100%;
-}
-
 @media (min-width: 768px) {
     .gallery-images{
         flex-direction:row;

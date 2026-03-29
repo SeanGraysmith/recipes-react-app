@@ -1,6 +1,7 @@
 import styles from "./css/About.css";
 import Question from "./components/Question"
 import aboutBackground from "../images/about-background.png";
+import ContactForm from "./components/ContactForm";
 
 const About = (props) => {
     return (
@@ -25,30 +26,8 @@ const About = (props) => {
                                          Any sharp knife will do for beginners, just be careful and take your time. I would also recommend using a bamboo cutting board and a wooden cooking spoon." />
             </div>
 
-            <div id="ask" className="about-card">
-                <h2>Ask a question</h2>
-                <form id="ask-form" method="POST">
-                    <input type="hidden" name="access_key" value="3925c134-3dc6-4ff2-9d39-6ac0475d907a"/>
-                    <p>
-                        <label for="name">Name:</label>
-                        <input placeholder="type your name here" type="text" name="name" id="name" required/>
-                    </p>
-
-                    <p>
-                        <label for="email">Email:</label>
-                        <input placeholder="type your email here" type="email" name="email" id="email" required/>
-                    </p>
-                
-                    <p>
-                        <label for="message">Message:</label>
-                        <textarea name="message" id="message" required></textarea>
-                    </p>
-
-
-                    <p><button className="action-button" type="submit">Submit</button></p>
-                </form>
-                <h3 id="form-result"></h3>
-            </div>
+            
+            <ContactForm />
         </main>
     );
 };

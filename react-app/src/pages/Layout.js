@@ -1,16 +1,14 @@
 import { Outlet, Link } from "react-router-dom";
 import styles from "./css/Layout.css";
-import Header from "./Header";
+import Header from "./components/Header";
 
 const Layout = () => {
     return (
         <>
-            <body>
                 <div id="content">
                     <Header />
                     <Outlet />
                 </div>
-            </body>
         </>
 
     );
