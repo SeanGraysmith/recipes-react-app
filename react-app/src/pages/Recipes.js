@@ -24,26 +24,26 @@ const Recipes = (props) => {
             <div id="recipes-list">
                 <div className="column">
                     <RecipeListCard imageLink={tomatoPastaImage} altText="Tomato Sauce Pasta" recipeName="Tomato Sauce Pasta" 
-                    recipeCost="$1.5/Serving" recipeTime="20 minutes" />
+                    recipeCost="$1.5/Serving" recipeTime="20 minutes" recipePath="/TomatoPastaRecipe" />
 
                     <RecipeListCard imageLink={tacosImage} altText="Tacos" recipeName="Tacos" 
-                    recipeCost="$1.5/Serving" recipeTime="25 minutes" />
+                    recipeCost="$1.5/Serving" recipeTime="25 minutes" recipePath="/TomatoPastaRecipe"/>
                 </div>
 
                 <div className="column">
                     <RecipeListCard imageLink={bunImage} altText="Bún bò Huế" recipeName="Bún bò Huế" 
-                    recipeCost="$3/Serving" recipeTime="60 minutes" />
+                    recipeCost="$3/Serving" recipeTime="60 minutes" recipePath="/TomatoPastaRecipe"/>
 
                     <RecipeListCard imageLink={banhImage} altText="Bánh mì" recipeName="Bánh mì" 
-                    recipeCost="$2/Serving" recipeTime="15 minutes" />
+                    recipeCost="$2/Serving" recipeTime="15 minutes" recipePath="/TomatoPastaRecipe"/>
                 </div>
 
                 <div className="column">
                     <RecipeListCard imageLink={stuffedPepperImage} altText="Stuffed Bell Peppers" recipeName="Stuffed Bell Peppers" 
-                    recipeCost="$2.25/Serving" recipeTime="35 minutes" />
+                    recipeCost="$2.25/Serving" recipeTime="35 minutes" recipePath="/TomatoPastaRecipe"/>
 
                     <RecipeListCard imageLink={ravioliImage} altText="Ravioli" recipeName="Ravioli" 
-                    recipeCost="$2/Serving" recipeTime="30 minutes" />
+                    recipeCost="$2/Serving" recipeTime="30 minutes" recipePath="/TomatoPastaRecipe"/>
                 </div>
             </div>
 

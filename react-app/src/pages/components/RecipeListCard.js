@@ -1,4 +1,5 @@
 import styles from "./css/RecipeListCard.css";
+import {Link} from "react-router-dom";
 const RecipeListCard = (properties) => {
     return (
         <section className="recipe-list-card">
@@ -8,7 +9,7 @@ const RecipeListCard = (properties) => {
                 <p>{properties.recipeCost}</p>
                 <p>{properties.recipeTime}</p>
             </div>
-            <button className="action-button">View Recipe</button>
+            <Link to={properties.recipePath}><button className="action-button">View Recipe</button></Link>
         </section>
     );
 };
