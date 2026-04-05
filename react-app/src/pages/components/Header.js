@@ -1,5 +1,5 @@
 import styles from "./css/Header.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {useState, useEffect} from "react";
 import logo from "../../images/logo.png";
 import Navigation from "./Navigation"
@@ -24,6 +24,14 @@ const Header = (props) => {
         return () => window.removeEventListener("resize",resized);
     }, []);
 
+    // send the user to a random recipe page, called in the onClick of the random button
+    const navigate = useNavigate();
+    const randomRecipe = () => {
+        const randomNum = Math.floor(Math.random() * 8 + 1);
+ 
+        navigate(`recipes/${randomNum}`);
+    };
+
     return (
         <header>
                 <nav id="topnav">
@@ -37,7 +45,7 @@ const Header = (props) => {
 
                     <Navigation state={menuOpen}/>
 
-                    <Link to="/TomatoPastaRecipe"><button className="action-button">Random Recipe</button></Link>
+                    <button className="action-button" onClick={randomRecipe}>Random Recipe</button>
                 </nav>
             </header>
     );
