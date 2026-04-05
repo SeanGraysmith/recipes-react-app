@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/recipes-react-app/static/css/main.17b95b21.css",
-    "main.js": "/recipes-react-app/static/js/main.b0eb4461.js",
-    "static/media/tacos.png": "/recipes-react-app/static/media/tacos.4f3978c5206404d7a53a.png",
+    "main.js": "/recipes-react-app/static/js/main.9feef5e4.js",
+    "static/media/tacos.png": "/recipes-react-app/static/media/tacos.672886f68f6107700191.png",
     "static/media/herbs-etc.png": "/recipes-react-app/static/media/herbs-etc.5bf18655eb5fabd3007c.png",
     "static/media/hero-pic.png": "/recipes-react-app/static/media/hero-pic.e02b43ba4c9ea5964927.png",
     "static/media/about-browse-background.png": "/recipes-react-app/static/media/about-browse-background.10919850a2385e0ea2c2.png",
@@ -10,28 +10,28 @@
     "static/media/gallery-background.png": "/recipes-react-app/static/media/gallery-background.44284239ba0b4ca289b6.png",
     "static/media/shepherds_pie.png": "/recipes-react-app/static/media/shepherds_pie.3f7d0c8c7ed756f98f36.png",
     "static/media/hawaiian-pizza.png": "/recipes-react-app/static/media/hawaiian-pizza.c360c41f4d0f7b7e6a60.png",
-    "static/media/ravioli.png": "/recipes-react-app/static/media/ravioli.d6e39b6b6569a2148800.png",
-    "static/media/banh-mi.png": "/recipes-react-app/static/media/banh-mi.dc2771f67550036947cb.png",
+    "static/media/ravioli.png": "/recipes-react-app/static/media/ravioli.bdecbfa638460f9f508d.png",
+    "static/media/banh-mi.png": "/recipes-react-app/static/media/banh-mi.f92696db77b1f93989a2.png",
     "static/media/rigatoni.png": "/recipes-react-app/static/media/rigatoni.b904356c8927e5c3872f.png",
     "static/media/steak.png": "/recipes-react-app/static/media/steak.80c2bf862248a9f01f42.png",
     "static/media/garlic-pasta.png": "/recipes-react-app/static/media/garlic-pasta.933ec5ef95abdb18baec.png",
-    "static/media/Bun_bo.png": "/recipes-react-app/static/media/Bun_bo.1aa0f6a570e4b7d388d0.png",
+    "static/media/Bun_bo.png": "/recipes-react-app/static/media/Bun_bo.3d48aebe69da235f852d.png",
     "static/media/pasta-gallery.png": "/recipes-react-app/static/media/pasta-gallery.5de467329d368e1c4f5b.png",
     "static/media/garlic-shrimp-pasta.png": "/recipes-react-app/static/media/garlic-shrimp-pasta.cf75fd592be14ffaba09.png",
     "static/media/chicken-fajitas.png": "/recipes-react-app/static/media/chicken-fajitas.e60725dac5288325daed.png",
-    "static/media/tomato-pasta.png": "/recipes-react-app/static/media/tomato-pasta.e335fccb30043ef8f46e.png",
+    "static/media/tomato-pasta.png": "/recipes-react-app/static/media/tomato-pasta.9817ca4b3c6cc732ff36.png",
     "static/media/bbq-chicken.png": "/recipes-react-app/static/media/bbq-chicken.1a14c55d0e6c0a3fd5cd.png",
-    "static/media/stuffed-bell-pepper.png": "/recipes-react-app/static/media/stuffed-bell-pepper.71aa23586d7edccbf509.png",
+    "static/media/stuffed-bell-pepper.png": "/recipes-react-app/static/media/stuffed-bell-pepper.7de973c4be889032a656.png",
     "static/media/cheese-chicken.png": "/recipes-react-app/static/media/cheese-chicken.89cbb9bff405b2f3115e.png",
     "static/media/buffalo_chicken.png": "/recipes-react-app/static/media/buffalo_chicken.687b19f6b0bb4c27689c.png",
     "static/media/breakfast-burrito.png": "/recipes-react-app/static/media/breakfast-burrito.30d295ffa049bd9abb58.png",
     "static/media/logo.png": "/recipes-react-app/static/media/logo.d18bf29b471cfe5d098d.png",
     "index.html": "/recipes-react-app/index.html",
     "main.17b95b21.css.map": "/recipes-react-app/static/css/main.17b95b21.css.map",
-    "main.b0eb4461.js.map": "/recipes-react-app/static/js/main.b0eb4461.js.map"
+    "main.9feef5e4.js.map": "/recipes-react-app/static/js/main.9feef5e4.js.map"
   },
   "entrypoints": [
     "static/css/main.17b95b21.css",
-    "static/js/main.b0eb4461.js"
+    "static/js/main.9feef5e4.js"
   ]
 }
