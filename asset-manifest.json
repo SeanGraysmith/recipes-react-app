@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/recipes-react-app/static/css/main.17b95b21.css",
-    "main.js": "/recipes-react-app/static/js/main.9feef5e4.js",
+    "main.js": "/recipes-react-app/static/js/main.79770820.js",
     "static/media/tacos.png": "/recipes-react-app/static/media/tacos.672886f68f6107700191.png",
     "static/media/herbs-etc.png": "/recipes-react-app/static/media/herbs-etc.5bf18655eb5fabd3007c.png",
     "static/media/hero-pic.png": "/recipes-react-app/static/media/hero-pic.e02b43ba4c9ea5964927.png",
@@ -28,10 +28,10 @@
     "static/media/logo.png": "/recipes-react-app/static/media/logo.d18bf29b471cfe5d098d.png",
     "index.html": "/recipes-react-app/index.html",
     "main.17b95b21.css.map": "/recipes-react-app/static/css/main.17b95b21.css.map",
-    "main.9feef5e4.js.map": "/recipes-react-app/static/js/main.9feef5e4.js.map"
+    "main.79770820.js.map": "/recipes-react-app/static/js/main.79770820.js.map"
   },
   "entrypoints": [
     "static/css/main.17b95b21.css",
-    "static/js/main.9feef5e4.js"
+    "static/js/main.79770820.js"
   ]
 }
