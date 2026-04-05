@@ -7,7 +7,7 @@ import NoPage from "./pages/NoPage";
 import Home from "./pages/Home";
 import Recipes from "./pages/Recipes";
 import Layout from "./pages/Layout";
-import TomatoPastaRecipe from "./pages/TomatoPastaRecipe";
+import RecipePage from "./pages/components/RecipePage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
@@ -18,9 +18,9 @@ const MySite = () => {
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
                     <Route path="Recipes" element={<Recipes />} />
+                    <Route path="Recipes/:id" element={<RecipePage />} />
                     <Route path="Gallery" element={<Gallery />} />
                     <Route path="About" element={<About />} />
-                    <Route path="TomatoPastaRecipe" element={<TomatoPastaRecipe />} />
                     <Route path="*" element={<NoPage />} />
                 </Route>
             </Routes>

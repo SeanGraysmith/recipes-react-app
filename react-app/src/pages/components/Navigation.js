@@ -7,7 +7,7 @@ const Navigation = (properties) => {
     // determines which page is active, so that "active" class can be added
     const location = useLocation();
     const isHomeActive = location.pathname === "/";
-    const isRecipesActive = location.pathname === "/recipes" || location.pathname === "/TomatoPastaRecipe";
+    const isRecipesActive = location.pathname.includes("/recipes");
     const isGalleryActive = location.pathname === "/gallery";
     const isAboutActive = location.pathname === "/about";
     

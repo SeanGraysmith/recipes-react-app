@@ -1,15 +1,30 @@
 import { Link } from "react-router-dom";
+import {useState, useEffect} from "react";
+import axios from "axios";
 import styles from "./css/Recipes.css";
 import RecipeListCard from "./components/RecipeListCard"
 
-import tomatoPastaImage from "../images/recipes/tomato-pasta.png";
-import tacosImage from "../images/recipes/tacos.png";
-import bunImage from "../images/recipes/Bun_bo.png";
-import banhImage from "../images/recipes/banh-mi.png";
-import stuffedPepperImage from "../images/recipes/stuffed-bell-pepper.png";
-import ravioliImage from "../images/recipes/ravioli.png";
-
 const Recipes = (props) => {
+    // load recipes after page loads
+
+    const [recipes, setRecipes] = useState([]);
+    useEffect(() => {
+        const loadRecipes = async() => {
+            const res = await axios.get("https://demo-backend-77py.onrender.com/api/recipes");
+            setRecipes(res.data);
+        };
+
+        loadRecipes();
+    },[]);
+
+    // break array into groups of 2 (A,B,C,D,E) becomes ((A,B), (C,D), (E))
+    // this function is modified/influenced by the following source:
+    // https://github.com/Chalarangelo/30-seconds-of-code/blob/master/content/snippets/js/s/split-array-into-chunks.md
+    const groupArray = (array) => {
+        // creates a new array of size length of array / 2, rounded
+        // then slices the original array by index to populate the new array
+        return Array.from({ length: Math.ceil(array.length / 2)}, (_, i) => array.slice(i*2, i*2+2));
+    };
     return (
         <main id="recipes-page">
             <h1>Browse All Recipes</h1>
@@ -22,33 +37,18 @@ const Recipes = (props) => {
             </div>
 
             <div id="recipes-list">
-                <div className="column">
-                    <RecipeListCard imageLink={tomatoPastaImage} altText="Tomato Sauce Pasta" recipeName="Tomato Sauce Pasta" 
-                    recipeCost="$1.5/Serving" recipeTime="20 minutes" recipePath="/TomatoPastaRecipe" />
-
-                    <RecipeListCard imageLink={tacosImage} altText="Tacos" recipeName="Tacos" 
-                    recipeCost="$1.5/Serving" recipeTime="25 minutes" recipePath="/TomatoPastaRecipe"/>
-                </div>
-
-                <div className="column">
-                    <RecipeListCard imageLink={bunImage} altText="Bún bò Huế" recipeName="Bún bò Huế" 
-                    recipeCost="$3/Serving" recipeTime="60 minutes" recipePath="/TomatoPastaRecipe"/>
-
-                    <RecipeListCard imageLink={banhImage} altText="Bánh mì" recipeName="Bánh mì" 
-                    recipeCost="$2/Serving" recipeTime="15 minutes" recipePath="/TomatoPastaRecipe"/>
-                </div>
-
-                <div className="column">
-                    <RecipeListCard imageLink={stuffedPepperImage} altText="Stuffed Bell Peppers" recipeName="Stuffed Bell Peppers" 
-                    recipeCost="$2.25/Serving" recipeTime="35 minutes" recipePath="/TomatoPastaRecipe"/>
-
-                    <RecipeListCard imageLink={ravioliImage} altText="Ravioli" recipeName="Ravioli" 
-                    recipeCost="$2/Serving" recipeTime="30 minutes" recipePath="/TomatoPastaRecipe"/>
-                </div>
+                {groupArray(recipes).map((group, index) => (
+                    <div className="column" key={index}>
+                        {group.map((recipe) => (
+                            <RecipeListCard key={recipe["id"]} id={recipe["id"]} imageLink={recipe["img"]} altText={recipe["title"]} recipeName={recipe["title"]} 
+                            recipeCost={recipe["cost"]} recipeTime={recipe["time"]} recipePath={recipe["page-link"]} />
+                        ))}
+                    </div>
+                ))}
             </div>
 
             <div id="recipes-page-selector">
-                <h4 id="recipes-pagenum-header">Showing page 1 of 2</h4>
+                <h4 id="recipes-pagenum-header">Showing page 1 of 1</h4>
                 <div id="page-number-buttons"></div>
             </div>
 
