@@ -6,7 +6,6 @@ import RecipeListCard from "./components/RecipeListCard"
 
 const Recipes = (props) => {
     // load recipes after page loads
-
     const [recipes, setRecipes] = useState([]);
     useEffect(() => {
         const loadRecipes = async() => {
@@ -20,11 +19,24 @@ const Recipes = (props) => {
     // break array into groups of 2 (A,B,C,D,E) becomes ((A,B), (C,D), (E))
     // this function is modified/influenced by the following source:
     // https://github.com/Chalarangelo/30-seconds-of-code/blob/master/content/snippets/js/s/split-array-into-chunks.md
+     // note that the dynamic page number button generation also uses this logic
     const groupArray = (array) => {
         // creates a new array of size length of array / 2, rounded
         // then slices the original array by index to populate the new array
         return Array.from({ length: Math.ceil(array.length / 2)}, (_, i) => array.slice(i*2, i*2+2));
     };
+
+    // dynamic page number selection logic
+    // limits shown columns to 3
+    const COLUMNS_PER_PAGE = 3;
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const totalPages = Math.ceil(groupArray(recipes).length / COLUMNS_PER_PAGE);
+    const allColumns = groupArray(recipes);
+
+    // gets only columns needed for current page
+    const visibleColumns = allColumns.slice((currentPage - 1) * COLUMNS_PER_PAGE, currentPage * COLUMNS_PER_PAGE);
+
     return (
         <main id="recipes-page">
             <h1>Browse All Recipes</h1>
@@ -37,7 +49,7 @@ const Recipes = (props) => {
             </div>
 
             <div id="recipes-list">
-                {groupArray(recipes).map((group, index) => (
+                {visibleColumns.map((group, index) => (
                     <div className="column" key={index}>
                         {group.map((recipe) => (
                             <RecipeListCard key={recipe["id"]} id={recipe["id"]} imageLink={recipe["img"]} altText={recipe["title"]} recipeName={recipe["title"]} 
@@ -48,8 +60,15 @@ const Recipes = (props) => {
             </div>
 
             <div id="recipes-page-selector">
-                <h4 id="recipes-pagenum-header">Showing page 1 of 1</h4>
-                <div id="page-number-buttons"></div>
+                <h4 id="recipes-pagenum-header">Showing page {currentPage} of {totalPages}</h4>
+
+                <div id="page-number-buttons">
+                    {Array.from({ length: totalPages }, (_, i) => i+1).map((page) => (
+                        <button key={page} className={`action-button ${page !== currentPage ? "inactive-button" : ""}`} onClick={() => setCurrentPage(page)}>
+                            {page}
+                        </button>
+                    ))}
+                </div>
             </div>
 
             <div id="recipes-cant-find">
