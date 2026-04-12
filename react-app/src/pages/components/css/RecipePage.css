@@ -95,12 +95,24 @@
     background: var(--light-gray);
     padding:30px;
     border-radius: 3%;
-    width:auto;
-    margin:20px 0px;
+    margin: 20px 0px;
 }   
 .instructions ol {
     padding-left:25px;
 }
+
+.comments {
+    padding: 30px;
+    margin: 20px;
+    border-radius:3%;
+    background: var(--light-gray);
+}
+
+.comments ul {
+    list-style-type: none;
+    padding-left:0;
+}
+
 
 @media (min-width: 768px) {
     .recipe-instructions-container {
@@ -112,11 +124,10 @@
     .recipe-intro, .recipe-instructions-container {
         flex-direction:row;
     }
+
     .instructions {
-        width:100%;
         margin-left:auto;
         margin-right:10px;
-        margin-top:20px;
         margin-bottom:auto;
     }
 

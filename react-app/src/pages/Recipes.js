@@ -39,7 +39,10 @@ const Recipes = (props) => {
 
     return (
         <main id="recipes-page">
-            <h1>Browse All Recipes</h1>
+            <div id="recipes-header">
+                <h1>Browse All Recipes</h1>
+            </div>
+            
 
             <div id="recipes-filter-buttons">
                 <button className="action-button">All</button>

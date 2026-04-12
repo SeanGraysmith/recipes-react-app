@@ -2,7 +2,18 @@
     background: var(--light-gray);
 }
 
-#recipes-page h1 {
+#recipes-header {
+   display:flex;
+}
+
+#recipes-header a {
+    margin:10px;
+    margin-left:65px;
+    margin-top:0px;
+    padding-top:10px;
+}
+
+#recipes-header h1 {
     margin:10px;
     margin-left:65px;
     margin-top:0px;

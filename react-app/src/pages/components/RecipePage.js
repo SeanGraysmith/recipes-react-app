@@ -2,15 +2,18 @@ import styles from "./css/RecipePage.css";
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
+import CommentForm from "../components/CommentForm";
 
 const RecipePage = (props) => {
     const {id} = useParams();
     const [recipe, setRecipe] = useState(null);
+    const [comments, setComments] = useState([]);
 
     useEffect(() => {
         const loadRecipe = async() => {
             const res = await axios.get(`https://demo-backend-77py.onrender.com/api/recipes/${id}`);
             setRecipe(res.data);
+            setComments(res.data.comments);
         };
 
         loadRecipe();
@@ -56,7 +59,6 @@ const RecipePage = (props) => {
                         </ul>
                     </div>
                 </div>
-
                 <div className="instructions">
                     <h2>Instructions</h2>
                     <ol>
@@ -67,6 +69,23 @@ const RecipePage = (props) => {
                             </div>
                         ))}
                     </ol>
+                </div>
+
+                <div className="comments">
+                    <h2>Comments</h2>
+                    <ul>
+                        {comments.map ((group, i) => (
+                            <div key={i}>
+                                <h3>{group.name}</h3>
+                                <p>{group.body}</p>
+                            </div>
+                        ))}
+                    </ul>
+
+                    <h3>New Comment:</h3>
+                    <CommentForm id={id} 
+                    onCommentAdded={(newComment) => setComments ([...comments, newComment])} 
+                    />
                 </div>
             </div>
         </main>
