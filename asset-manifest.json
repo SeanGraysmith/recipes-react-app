@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/recipes-react-app/static/css/main.17b95b21.css",
-    "main.js": "/recipes-react-app/static/js/main.24774c8a.js",
+    "main.css": "/recipes-react-app/static/css/main.5aa24115.css",
+    "main.js": "/recipes-react-app/static/js/main.f9148973.js",
     "static/media/tacos.png": "/recipes-react-app/static/media/tacos.672886f68f6107700191.png",
     "static/media/herbs-etc.png": "/recipes-react-app/static/media/herbs-etc.5bf18655eb5fabd3007c.png",
     "static/media/hero-pic.png": "/recipes-react-app/static/media/hero-pic.e02b43ba4c9ea5964927.png",
@@ -27,11 +27,11 @@
     "static/media/breakfast-burrito.png": "/recipes-react-app/static/media/breakfast-burrito.30d295ffa049bd9abb58.png",
     "static/media/logo.png": "/recipes-react-app/static/media/logo.d18bf29b471cfe5d098d.png",
     "index.html": "/recipes-react-app/index.html",
-    "main.17b95b21.css.map": "/recipes-react-app/static/css/main.17b95b21.css.map",
-    "main.24774c8a.js.map": "/recipes-react-app/static/js/main.24774c8a.js.map"
+    "main.5aa24115.css.map": "/recipes-react-app/static/css/main.5aa24115.css.map",
+    "main.f9148973.js.map": "/recipes-react-app/static/js/main.f9148973.js.map"
   },
   "entrypoints": [
-    "static/css/main.17b95b21.css",
-    "static/js/main.24774c8a.js"
+    "static/css/main.5aa24115.css",
+    "static/js/main.f9148973.js"
   ]
 }
