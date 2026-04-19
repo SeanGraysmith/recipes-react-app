@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import CommentForm from "../components/CommentForm";
+import Comment from "../components/Comment";
 
 const RecipePage = (props) => {
     const {id} = useParams();
@@ -19,7 +20,18 @@ const RecipePage = (props) => {
         loadRecipe();
     }, [id]);
 
-    // instead of ternary, im going to check if the page is loaded with an if
+    // removing deleted comment from client side
+    const handleDelete = (index) => {
+        setComments(comments.filter((_, i) => i !== index));
+    };
+
+    // edit comment from client side
+    // map comments and set the specified index to the specified new comment
+    const handleEdit = (index, newComment) => {
+        setComments(comments.map((c,i) => i === index ? newComment : c));
+    };
+
+
     if (!recipe) {
         return <p>Loading...</p>
     }
@@ -75,11 +87,15 @@ const RecipePage = (props) => {
                     <h2>Comments</h2>
                     <ul>
                         {comments.map ((group, i) => (
-                            <div key={i}>
-                                <h3>{group.name}</h3>
-                                <p>{group.body}</p>
-                            </div>
-                        ))}
+                            <Comment 
+                                key={i}
+                                comment={group}
+                                index={i}
+                                recipeId={id}
+                                onDelete={handleDelete}
+                                onEdit={handleEdit}
+                            />
+                        ))} 
                     </ul>
 
                     <h3>New Comment:</h3>

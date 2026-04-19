@@ -39,7 +39,7 @@ const CommentForm = (properties) => {
 
             <div>
                 <label htmlFor="body">Comment Content:</label>
-                <input placeholder="type your comment here" type="text" name="body" id="body" autoComplete="off" required/>
+                <textarea placeholder="type your comment here" type="text" name="body" id="body" autoComplete="off" required/>
             </div>
 
             <p><button className="action-button" type="submit">Submit</button></p>
