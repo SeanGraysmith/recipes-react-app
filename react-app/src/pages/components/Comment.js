@@ -1,5 +1,4 @@
 import { useState } from "react";
-import axios from "axios";
 import styles from "./css/Comment.css";
 
 const Comment = (properties) => {
@@ -8,18 +7,39 @@ const Comment = (properties) => {
     const [editBody, setEditBody] = useState(properties.comment.body);
 
     const handleDelete = async () => {
-        await axios.delete(`https://demo-backend-77py.onrender.com/api/recipes/${properties.recipeId}/comments/${properties.index}`);
-        properties.onDelete(properties.index);
+        const response = await fetch(`https://demo-backend-77py.onrender.com/api/recipes/${properties.recipeId}/comments/${properties.index}`,  {
+            method: "DELETE"
+        });
+
+        if (response.status === 200) {
+            properties.onDelete(properties.index);
+            properties.setFeedback("Comment Deleted.");
+        } else {
+            const error = await response.text();
+            properties.setFeedback(error);
+        }
     };
 
     const handleEditSubmit = async (e) => {
         e.preventDefault();
-        const res = await axios.put(
-            `https://demo-backend-77py.onrender.com/api/recipes/${properties.recipeId}/comments/${properties.index}`,
-            {name: editName, body: editBody }
-        );
-        properties.onEdit(properties.index, res.data);
-        setIsEditing(false);
+        const response = await fetch(`https://demo-backend-77py.onrender.com/api/recipes/${properties.recipeId}/comments/${properties.index}`, {
+            method: "PUT",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify ({
+                name: editName,
+                body: editBody 
+            }),
+        });
+
+        if (response.status === 200) {
+            const data = await response.json();
+            properties.onEdit(properties.index, data);
+            properties.setFeedback("Comment edited.");
+            setIsEditing(false);
+        } else {
+            const error = await response.text();
+            properties.setFeedback(error);
+        }
     };
 
     // if editing, return alternate layout with inputs, 

@@ -9,6 +9,7 @@ const RecipePage = (props) => {
     const {id} = useParams();
     const [recipe, setRecipe] = useState(null);
     const [comments, setComments] = useState([]);
+    const [feedback, setFeedback] = useState("");
 
     useEffect(() => {
         const loadRecipe = async() => {
@@ -92,6 +93,7 @@ const RecipePage = (props) => {
                                 comment={group}
                                 index={i}
                                 recipeId={id}
+                                setFeedback={setFeedback}
                                 onDelete={handleDelete}
                                 onEdit={handleEdit}
                             />
@@ -99,9 +101,12 @@ const RecipePage = (props) => {
                     </ul>
 
                     <h3>New Comment:</h3>
-                    <CommentForm id={id} 
+                    <CommentForm 
+                    id={id} 
                     onCommentAdded={(newComment) => setComments ([...comments, newComment])} 
+                    setFeedback={setFeedback}
                     />
+                    <h4>{feedback}</h4>
                 </div>
             </div>
         </main>
