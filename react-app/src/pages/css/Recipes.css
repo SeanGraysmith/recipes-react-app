@@ -76,6 +76,9 @@
     margin:auto;
 }
 
+.action-button.inactive-button {
+    background: var(--general-background);
+}
 
 @media (min-width: 768px) {
     #recipes-list {

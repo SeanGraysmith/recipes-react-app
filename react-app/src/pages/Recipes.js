@@ -7,6 +7,9 @@ import RecipeListCard from "./components/RecipeListCard"
 const Recipes = (props) => {
     // load recipes after page loads
     const [recipes, setRecipes] = useState([]);
+    const [currentFilter, setFilter] = useState("all");
+    const [filteredRecipes, setFilteredRecipes] = useState([]);
+
     useEffect(() => {
         const loadRecipes = async() => {
             const res = await axios.get("https://demo-backend-77py.onrender.com/api/recipes");
@@ -15,6 +18,42 @@ const Recipes = (props) => {
 
         loadRecipes();
     },[]);
+
+    // filter recipes based on current filter. 
+    // if string in currentFilter does not match any valid filter, 
+    // it is defaulted to all
+    useEffect(() => {
+        const tempRecipeList = [];
+        if (currentFilter === "beginner") {
+            // limit number of steps to 5 and ingredients to 7
+            recipes.forEach((recipe, i, recipes) => {
+                if (recipe["ingredients"].length <= 6 && 
+                    recipe["instructions"].length <= 5) {
+                        tempRecipeList.push(recipe);
+                    }
+            });
+        } else if (currentFilter === "budget") {
+            // limit to recipes under $3 a serving
+            recipes.forEach((recipe, i, recipes) => {
+                if (recipe["cost"] < 2.67) {
+                    tempRecipeList.push(recipe);
+                }
+            });
+        } else if (currentFilter === "quick") {
+            // limit to recipes less than or equal to 45 mins
+            recipes.forEach((recipe, i, recipes) => {
+                if (recipe["time"] <= 30) {
+                    tempRecipeList.push(recipe);
+                }
+            });
+        } else { // all or invalid case
+            recipes.forEach((recipe, i, recipes) => {
+                tempRecipeList.push(recipe);
+            });
+        }
+        setCurrentPage(1);
+        setFilteredRecipes(tempRecipeList);
+    }, [recipes, currentFilter]); // this last line means that this effect runs again when recipes or currentFilter changes.
 
     // break array into groups of 2 (A,B,C,D,E) becomes ((A,B), (C,D), (E))
     // this function is modified/influenced by the following source:
@@ -31,8 +70,8 @@ const Recipes = (props) => {
     const COLUMNS_PER_PAGE = 3;
     const [currentPage, setCurrentPage] = useState(1);
 
-    const totalPages = Math.ceil(groupArray(recipes).length / COLUMNS_PER_PAGE);
-    const allColumns = groupArray(recipes);
+    const totalPages = Math.ceil(groupArray(filteredRecipes).length / COLUMNS_PER_PAGE);
+    const allColumns = groupArray(filteredRecipes);
 
     // gets only columns needed for current page
     const visibleColumns = allColumns.slice((currentPage - 1) * COLUMNS_PER_PAGE, currentPage * COLUMNS_PER_PAGE);
@@ -45,10 +84,21 @@ const Recipes = (props) => {
             
 
             <div id="recipes-filter-buttons">
-                <button className="action-button">All</button>
-                <button className="action-button inactive-button">Beginner</button>
-                <button className="action-button inactive-button">Budget</button>
-                <button className="action-button inactive-button">Quick</button>
+                <button id="all-filter" 
+                className={`action-button ${currentFilter !== "all" ? "inactive-button" : ""}`} 
+                onClick={() => setFilter("all")}>All</button>
+
+                <button id="beginner-filter" 
+                className={`action-button ${currentFilter !== "beginner" ? "inactive-button" : ""}`} 
+                onClick={() => setFilter("beginner")}>Beginner</button>
+
+                <button id="budget-filter" 
+                className={`action-button ${currentFilter !== "budget" ? "inactive-button" : ""}`} 
+                onClick={() => setFilter("budget")}>Budget</button>
+
+                <button id="quick-filter" 
+                className={`action-button ${currentFilter !== "quick" ? "inactive-button" : ""}`} 
+                onClick={() => setFilter("quick")}>Quick</button>
             </div>
 
             <div id="recipes-list">
