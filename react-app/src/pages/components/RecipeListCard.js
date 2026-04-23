@@ -9,7 +9,7 @@ const RecipeListCard = (properties) => {
                 <p>${properties.recipeCost}/Serving</p>
                 <p>{properties.recipeTime} minutes</p>
             </div>
-            <Link to={`/recipes/${properties.id}`}><button className="action-button">View Recipe</button></Link>
+            <Link to={properties.recipePath}><button className="action-button">View Recipe</button></Link>
         </section>
     );
 };

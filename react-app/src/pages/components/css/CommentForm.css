@@ -1,3 +1,12 @@
 form input, form textarea {
     width:100%;
 }
+
+#preview-image {
+    max-width:250px;
+}
+
+#clear-link {
+    color:black;
+    font-size:15px;
+}

@@ -22,14 +22,14 @@ const RecipePage = (props) => {
     }, [id]);
 
     // removing deleted comment from client side
-    const handleDelete = (index) => {
-        setComments(comments.filter((_, i) => i !== index));
+    const handleDelete = (commentId) => {
+        setComments(comments.filter((c) => c._id !== commentId));
     };
 
     // edit comment from client side
     // map comments and set the specified index to the specified new comment
-    const handleEdit = (index, newComment) => {
-        setComments(comments.map((c,i) => i === index ? newComment : c));
+    const handleEdit = (commentId, newComment) => {
+        setComments(comments.map((c) => c._id === commentId ? newComment : c));
     };
 
 
@@ -87,11 +87,11 @@ const RecipePage = (props) => {
                 <div className="comments">
                     <h2>Comments</h2>
                     <ul>
-                        {comments.map ((group, i) => (
-                            <Comment 
-                                key={i}
+                        {comments.map ((group) => (
+                            <Comment  
+                                key={group._id}
                                 comment={group}
-                                index={i}
+                                commentId={group._id}
                                 recipeId={id}
                                 setFeedback={setFeedback}
                                 onDelete={handleDelete}

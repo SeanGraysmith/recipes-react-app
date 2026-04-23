@@ -9,6 +9,7 @@ const Recipes = (props) => {
     const [recipes, setRecipes] = useState([]);
     const [currentFilter, setFilter] = useState("all");
     const [filteredRecipes, setFilteredRecipes] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
         const loadRecipes = async() => {
@@ -68,7 +69,6 @@ const Recipes = (props) => {
     // dynamic page number selection logic
     // limits shown columns to 3
     const COLUMNS_PER_PAGE = 3;
-    const [currentPage, setCurrentPage] = useState(1);
 
     const totalPages = Math.ceil(groupArray(filteredRecipes).length / COLUMNS_PER_PAGE);
     const allColumns = groupArray(filteredRecipes);
@@ -105,8 +105,8 @@ const Recipes = (props) => {
                 {visibleColumns.map((group, index) => (
                     <div className="column" key={index}>
                         {group.map((recipe) => (
-                            <RecipeListCard key={recipe["id"]} id={recipe["id"]} imageLink={recipe["img"]} altText={recipe["title"]} recipeName={recipe["title"]} 
-                            recipeCost={recipe["cost"]} recipeTime={recipe["time"]} recipePath={recipe["page-link"]} />
+                            <RecipeListCard key={recipe["_id"]} id={recipe["_id"]} imageLink={recipe["img"]} altText={recipe["title"]} recipeName={recipe["title"]} 
+                            recipeCost={recipe["cost"]} recipeTime={recipe["time"]} recipePath={`/recipes/${recipe["_id"]}`} />
                         ))}
                     </div>
                 ))}

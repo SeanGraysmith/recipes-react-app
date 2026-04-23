@@ -12,3 +12,7 @@
 form input , form textarea{
     width:100%;
 }
+
+.comment-image img {
+    max-width:300px;
+}

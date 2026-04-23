@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import {useState, useEffect} from "react";
 import logo from "../../images/logo.png";
 import Navigation from "./Navigation"
+import axios from "axios";
 
 const Header = (props) => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -26,10 +27,9 @@ const Header = (props) => {
 
     // send the user to a random recipe page, called in the onClick of the random button
     const navigate = useNavigate();
-    const randomRecipe = () => {
-        const randomNum = Math.floor(Math.random() * 8 + 1);
- 
-        navigate(`recipes/${randomNum}`);
+    const randomRecipe = async ()  => {
+        const res = await axios.get("https://demo-backend-77py.onrender.com/api/recipes/random");
+        navigate(`/recipes/${res.data._id}`);
     };
 
     return (
